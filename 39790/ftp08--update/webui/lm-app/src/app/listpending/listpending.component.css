@@ -1,0 +1,17 @@
+.table tr.active td {
+    background-color:#123456;
+    color: white;
+  }
+.highlighted{
+    background: #42A948;
+}
+
+.deHighlighted{
+    background:white;
+}
+#t2{
+    background:#5898C1;
+}
+#tr2{
+    background:#51AAAC;
+}

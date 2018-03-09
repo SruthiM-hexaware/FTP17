@@ -1,0 +1,56 @@
+
+
+<div style="text-align:center">
+    
+   </div>
+   <div>
+       <table border="1">
+           <thead>   
+               <tr>
+               <th width="80">Leave ID</th>
+               <th width="100">Number of Days</th>
+               <th width="80">Start Date</th>
+               <th width="80">End Date</th>
+               <th width="100">Leave Type</th>
+               <th width="200">Status</th>
+               <th width="200">Reason</th>
+               <th width="100">Applied On</th>
+               <th width="200">Manager Comments</th>
+               </tr>
+           </thead>
+          <tbody class=leaveDetails>
+               <tr *ngFor="let LeaveDetails of leaveDetails"> 
+                
+                   <td>
+                       <h5>{{LeaveDetails.leaId}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaNoOfDays}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaStartDate | date: 'dd'}}/{{LeaveDetails.leaStartDate | date:'MM'}}/{{LeaveDetails.leaStartDate | date: 'yyyy'}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaEndDate | date: 'dd'}}/{{LeaveDetails.leaEndDate | date:'MM'}}/{{LeaveDetails.leaEndDate | date: 'yyyy'}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaType}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaStatus}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaReason}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaAppliedOn | date: 'dd'}}/{{LeaveDetails.leaAppliedOn | date:'MM'}}/{{LeaveDetails.leaAppliedOn | date: 'yyyy'}}</h5>
+                   </td>
+                   <td>
+                       <h5>{{LeaveDetails.leaMgrComments}}</h5>
+                   </td>
+               </tr>
+           </tbody>
+       </table>
+   </div>
+   
+   <input type = "button" value="New Application" (click)="doApplyLeave()" class="btn btn-primary pull-right">

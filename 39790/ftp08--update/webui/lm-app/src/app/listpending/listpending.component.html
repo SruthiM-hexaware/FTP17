@@ -1,0 +1,51 @@
+
+
+<div >
+<table id="t1">
+<tr *ngFor="let employee of employees; index as i ">
+  <table class="table table-bordered" id="t2">
+    <tr (click)="doDeselect()">
+      <th>Employee ID</th>
+      <td>{{employee.empId}}</td>
+      <th colspan="2">Employee Name</th>
+      <td width="30%">{{employee.empName}}</td>
+      <th colspan="2">Employee leave balance</th>
+      <td colspan="2">{{employee.empLeaveBalance}}</td>
+    </tr>    
+          <tr (click)="doDeselect()">            
+              <th>Leave ID</th>
+              <th>Number of Days</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Leave Type</th>
+              <th>Status</th>
+              <th colspan="2" id="reason">Reason</th>
+          </tr>
+          <tr *ngFor="let leaveDetail of leaveDetails[i]" (click)="setClickedRow(leaveDetail, employee)"
+          [class.highlighted]= "leaveDetail.leaId === selectedRow" 
+          [style.background-color]="leaveDetail.leaId ==  selectedRow? 'green' : 'white'" 
+          >      
+              <td>{{leaveDetail.leaId}}</td>
+              <td>{{ leaveDetail.leaNoOfDays }}</td>
+              <td>{{leaveDetail.leaStartDate}}</td>
+              <td>{{leaveDetail.leaEndDate}}</td>
+              <td>{{leaveDetail.leaType}}</td>
+              <td>{{leaveDetail.leaStatus}}</td>
+              <td colspan="2" style="width:25%">{{leaveDetail.leaReason}}</td>           
+          </tr>
+        
+      
+  </table>  
+</tr>
+</table>
+<!--<div class="well well-lg">
+    Selected Row : <strong>{{selectedRow}}</strong>
+</div>-->
+<div *ngIf="showButton">
+  <input type="button" value="Approve/Deny" class="btn btn-primary btn-default" (click)="doApproveDeny(leaveDetails)">
+</div>
+
+<div *ngIf="!showButton">
+    <input type="button" value="Approve/Deny" class="btn disabled">
+</div>
+</div>

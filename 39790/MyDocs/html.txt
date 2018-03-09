@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<!-- <p>
+  approve-deny works!
+</p>
+<div>
+<div class = ".col-sm-6">
+Approve or Deny Leaves :
+<br/><br/>
+Employee ID :{{(empl | async)?.empName}}
+<br/>
+Employee Name :{{(empl | async)?.empId}}
+<br/>
+
+
+
+Leave balance :{{(empl | async)?.empEmail}}
+
+</div>
+<div class = ".col-sm-6">
+Start Date :{{(empl | async)?.startDate}}
+<br/>
+End Date : {{(empl | async)?.endDate}}
+<br/>
+Number of days : {{(empl| async)?.noOfDays}}
+<br/>
+Leave Type : Earned Leave
+<br/>
+Leave Reason : {{(empl| async)?.leaveReason}}
+<br/>
+</div>
+</div> -->
+
+
+  <div class="container">
+      <h1 style="text-align:center;">Approve or Deny Leave</h1>
+      <br/><br/>
+      <div class="row">
+        <div class="col-sm-6">
+          Employee ID :{{(empl | async)?.empName}}
+              <br/><br/>
+              Employee Name :{{(empl | async)?.empId}}
+              <br/><br/>
+              Leave balance :{{(empl | async)?.empEmail}}
+              <br/><br/>
+          
+        </div>
+        <div class="col-sm-6">
+              Start Date :{{(empl | async)?.startDate}}
+              <br/><br/>
+              End Date : {{(empl | async)?.endDate}}
+              <br/><br/>
+              Number of days : {{(empl| async)?.noOfDays}}
+              <br/><br/>
+              Leave Type : Earned Leave
+              <br/><br/>
+              Leave Reason : {{(empl| async)?.leaveReason}}
+              <br/><br/>
+        </div>
+      </div>
+      <!-- Comments :
+      <input type="text" align="center" name="leaveComments"> -->
+      <br/>  <br/>  <br/>
+    </div>
+    <form #userForm="ngForm" (ngSubmit)="approvrorDeny(userForm)">    
+<!-- <form (ngSubmit)="approvrorDeny()">    -->
+Leave id :
+<input type="number" name="leaveId" [(ngModel)]="mode.leaveId">
+Manager ID :
+<input type="number" name="managerId" [(ngModel)]="mode.empId">
+Comments :
+<input type="text" align="center" [(ngModel)]="mode.leaveComments" name="leaveComments">
+<br/>  <br/>  <br/>
+<button (click)="status('APPROVED')">Approve</button>
+&emsp;&emsp;&emsp;&emsp;&emsp;
+<button (click)="status('DENIED')">Deny</button>
+&emsp;&emsp;&emsp;&emsp;&emsp;
+<button (click) = "cancel()">Cancel</button>
+&emsp;&emsp;&emsp;&emsp;&emsp;
+</form>
+<br/><br/><br/><br/>
+Result is : {{msg}}

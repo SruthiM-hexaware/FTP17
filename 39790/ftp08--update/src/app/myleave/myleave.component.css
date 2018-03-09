@@ -1,0 +1,9 @@
+th {
+    background-color: #0BA9EE;
+    color: white;
+    size: 40%;
+    column-span: 20%;
+}
+td {
+    text-align: center;
+}

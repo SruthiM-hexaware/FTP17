@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EmployeeMapper.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>leavemanager\src\main\java\com\hexaware\ftp08\persistence\EmployeeMapper.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.ftp08.persistence;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.skife.jdbi.v2.tweak.ResultSetMapper;
+import org.skife.jdbi.v2.StatementContext;
+
+import com.hexaware.ftp08.model.Employee;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Mapper class to map from result set to employee object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l13s0'>public class EmployeeMapper implements ResultSetMapper&lt;Employee> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>  /**
+   * @param idx the index
+   * @param rs the resultset
+   * @param ctx the context
+   * @return the mapped employee object
+   * @throws SQLException in case there is an error in fetching data from the resultset
+   */</div><span>  /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final Employee map(final int idx, final ResultSet rs, final      StatementContext ctx) throws SQLException {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @return Employee
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td class='count'>2</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>    return new Employee(rs.getInt("EMP_ID"), rs.getString("EMP_NAME"), rs.getString("EMP_EMAIL"),</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>                        rs.getLong("EMP_MOB_NO"), rs.getString("EMP_DPT_NAME"),</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td class='count'>1</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l27s0'>                        rs.getInt("EMP_MGR_ID"), rs.getInt("EMP_LEAVE_BALANCE"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>29</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>31</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

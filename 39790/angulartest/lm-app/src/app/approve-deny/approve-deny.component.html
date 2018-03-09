@@ -1,0 +1,69 @@
+<body style="font-family:Book Antiqua;">
+  <h1 style="text-align: center;color:rgb(26, 119, 240);">
+    Approve or Deny Leave:</h1>
+  <div class="grid-container">
+    <div class="grid-item1">
+      Employee ID
+      <br/>
+      <br/> Employee Name
+      <br/>
+      <br/> Leave balance
+      <br/>
+      <br/>
+    </div>
+    <div class="grid-item2">
+      :  {{ (empData | async)?.empId}}
+      <br/>
+      <br/>:  {{ (empData | async)?.empName}}
+      <br/>
+      <br/>:  {{ (empData | async)?.avlBal}}
+      <br/>
+      <br/>
+    </div>
+    <div class="grid-item3">
+      Start Date 
+      <br/>
+      <br/> End Date 
+      <br/>
+      <br/> Number of days 
+      <br/>
+      <br/> Leave Type 
+      <br/>
+      <br/> Leave Reason 
+    </div>
+    <div class="grid-item4">
+      :  {{startDate}}
+      <br/>
+      <br/>:  {{endDate}}
+      <br/>
+      <br/>:  {{mode.noOfDays}}
+      <br/>
+      <br/>:  {{mode.leaveType}}
+      <br/>
+      <br/>:  {{mode.leaveReason}}
+    </div>
+  </div>
+
+  <form #userForm="ngForm" (ngSubmit)="approvrorDeny(userForm)">
+    <br/>
+    <br/>
+    <p style="font-size:160%;" align="center">Comments :
+      <input type="text" align="center" [(ngModel)]="mode.leaveComments" name="leaveComments">
+    </p>
+    <br/>
+    <p align="center">
+      <button class="button button3" (click)="status('APPROVED')">Approve</button>
+      &emsp;&emsp;&emsp;&emsp;&emsp;
+      <button class="button button3" (click)="status('DENIED')">Deny</button>
+      &emsp;&emsp;&emsp;&emsp;&emsp;
+      <button class="button button3" (click)="cancel()">Cancel</button>
+      &emsp;&emsp;&emsp;&emsp;&emsp;
+      
+    </p>
+  </form>
+
+
+  <br/>
+  <br/>
+  <p style="font-size:160%;" align="center">{{msg}}</p>
+</body>

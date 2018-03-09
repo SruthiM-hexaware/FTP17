@@ -1,0 +1,105 @@
+-- new project without much dependancy installing 
+
+ng new 
+
+--  new project
+
+ng new HelloWorld
+
+
+
+
+-- When angular not installed
+
+npm install -g @angular/cli
+
+once installed go to
+
+C:/user/HVuser/appdata/roaming/npm/  -- copy the path
+
+-- set path variable
+
+once path variable is set,
+
+--> open terminal
+
+--> ng new <filename if needed>
+
+appmodule.ts file
+
+only two import : system import
+
+import { BrowserModule } from '@angular/platform-browser';
+
+import { NgModule } from '@angular/core';
+
+in imports we have browser module to run the programs in browser.
+provider is used for services.
+
+appComponent.ts file
+
+similar to java it has a constructor
+we can add data into the constructor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+emp = new Employee
+empl : Observable <Employee>
+  constructor(private _router : Router, private serv : EmpDemoService) {
+    this.empl=this.serv.getEmpl(this.emp.empId)
+   }
+
+
+
+
+
+
+
+
+
+
+<table border=4 >
+  <tr>
+    <th>EmpId</th>
+    <th>Emp name</th>
+    <th>emp Email</th>
+    <th>emp MobNo</th>
+    <th>manager id</th>
+    <th>login</th>
+  </tr>
+  <tr *ngFor =" let s of employee| async"> 
+    <td> {{s.empId}} </td>
+    <td> {{s.empName}} </td>
+    <td> {{s.empEmail}} </td>
+    <td> {{s.mobNo}} </td>
+    <td> {{s.managerId}} </td>
+    <td>
+      <button (click) = "view(s.empId)">Login</button>
+    </td>
+    
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+

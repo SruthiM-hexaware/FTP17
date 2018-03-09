@@ -1,0 +1,47 @@
+.button {
+    background-color:#0F5C74;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 5 5px #0F5C74;
+    font-size: 20px;
+    font-family:Book Antiqua;
+    box-shadow: 0 1px 0 rgba(255,255,255, 5), inset 0 1px 0 rgba(255,255,255, 5);
+}
+.button3:hover {
+  background-color:white;
+  color:black;
+  border: 2px solid #0F5C74;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-top: 10px;
+    padding-left: 250px;
+  }
+  .grid-item1 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+  }
+  .grid-item2 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+  }
+  .grid-item3 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+  }
+  .grid-item4 {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 20px;
+    text-align: left;
+  }

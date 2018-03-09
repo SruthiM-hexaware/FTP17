@@ -1,0 +1,14 @@
+http.get(""); return json() casting as Observable<Employee[]>;
+
+http.post(); 
+
+  approveOrDeny(ld:LeaveDetails) : Observable<string> { 
+
+   //   alert(ld.leaveId + " " +ld.empId + " " +ld.leaveStatus + " " +ld.leaveComments);
+    
+    return this.http.post("http://localhost:8080/ftp17/api/LeaveDetails/approveorDeny",ld).map(response=>response.text())
+        .catch((error:any)=>Observable.throw(error.toString() || 'Server Error'));
+        }
+
+
+

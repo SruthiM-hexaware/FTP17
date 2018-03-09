@@ -1,0 +1,49 @@
+int levBal = employee.getAvlBal();
+      if (levBal == 0) {
+        System.out.println("SORRY! YOU CAN'T APPLY FOR LEAVE");
+      } else {
+        System.out.println("LEAVES AVAILABLE = " + levBal);
+        System.out.println("ENTER THE NUMBER OF DAYS :");
+        int noofdays = option.nextInt();
+        if (levBal < noofdays) {
+          System.out.println("\n----YOU HAVE INSUFFICIENT LEAVES----\n");
+        } else {
+          System.out.println("ENTER START DATE IN THIS FORMAT =>(YYYY-MM-DD)");
+          String sd = option.next();
+          try {
+            strtDate = start.parse(sd);
+          } catch (ParseException e) {
+            System.out.println(e);
+          }
+          Date doj = employee.getDoj();
+          boolean res1 = Employee.validateStartDate(strtDate, doj);
+          if (!res1) {
+            System.out.println("\n ---INVALID START DATE--- \n");
+          } else {
+            System.out.println("ENTER END DATE IN THIS FORMAT =>(YYYY-MM-DD):");
+            String ed = option.next();
+            try {
+              endDate = start.parse(ed);
+            } catch (ParseException e) {
+              System.out.println(e);
+            }
+            boolean res2 = Employee.validateEndDate(strtDate, endDate);
+            if (!res2) {
+              System.out.println("\n ---INVALID END DATE--- \n");
+            } else {
+              boolean trial = Employee.cal(strtDate, endDate, noofdays);
+              if (!trial) {
+                System.out.println("\n---INVALID NUMBER OF DAYS---\n");
+              } else {
+                option.nextLine();
+                System.out.println("\n---ENTER THE REASON FOR LEAVE---\n");
+                String lr = option.nextLine();
+                Employee.applyLeave(noofdays, strtDate, endDate, lr, empId);
+                int mId = employee.getManagerId();
+                if (mId == 0) {
+                  LeaveDetails.autoUpdate(empId);
+                }
+              }
+            }
+          }
+>>>>>>> Stashed changes

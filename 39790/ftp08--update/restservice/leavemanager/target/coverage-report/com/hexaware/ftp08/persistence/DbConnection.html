@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DbConnection.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>leavemanager\src\main\java\com\hexaware\ftp08\persistence\DbConnection.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.ftp08.persistence;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import org.skife.jdbi.v2.DBI;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'>4</td><td>&nbsp;</td>
+      <td><pre class='comment'>//import org.skife.jdbi.v2.logging.PrintStreamLog;;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>8</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l8s0'>public class DbConnection {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * Connecting to MYSQL DB.
+     * @return database Connection.
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>13</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final DBI getConnect() {</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>14</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    try {</pre></td>
+    </tr>
+    <tr>
+      <td></td><td class='count'>9</td>
+      <td class='paths'>
+        <span style='cursor:default; background-color:#aa5500' onclick='hidePath()'>Path coverage: 1/3</span>
+        <span class='covered' onclick="showPath(this,'l15s0 l17s0 l18s0 l20s0 l22s0')">A: 9</span>
+        <span class='uncovered' onclick="showPath(this,'l15s0 l17s0 l17s1 l20s0 l22s0')">B: 0</span>
+        <span class='uncovered' onclick="showPath(this,'l15s0 l17s0 l17s1 l18s0 l20s0 l22s0')">C: 0</span>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l15s0'>      Class.forName("com.mysql.jdbc.Driver");</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>16</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l16s0'>      String dbc = System.getenv("DB_CONNECTION");</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>17</td><td class='count'>9</td>
+      <td><pre class='prettyprint jmp'>      <span id='l17s0' title='Executions: 9' class='covered cp' onclick='showHide(this,0)'>if (dbc == null</span> || <span id='l17s1' title='Executions: 0' class='uncovered'>dbc.equals(""))</span> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x3</li>
+        </ol>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>18</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l18s0'>        dbc = "localhost:3306";</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>19</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>      }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>20</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l20s0'>      DBI dbi = new DBI("jdbc:mysql://" + dbc + "/FTP08?useSSL=false", "FTP08", "FTP08");</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>21</td><td>&nbsp;</td>
+      <td><pre class='comment'>      //dbi.setSQLLog(new PrintStreamLog());</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>22</td><td class='count'>9</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l22s0'>      return dbi;</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+          <li>com.hexaware.ftp08.model.LeaveDetailsTest#testDenyLeave: 185x3</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l23s0'>    } catch (ClassNotFoundException e) {</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>24</td><td class='count'>0</td>
+      <td><pre class='prettyprint uncovered' id='l24s0'>      throw new RuntimeException(e);</pre>
+        <ol style='display:none'></ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>25</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>    }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>27</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

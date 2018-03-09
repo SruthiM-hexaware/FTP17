@@ -1,0 +1,22 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  
+  }
+  .grid-item1 {
+    padding: 20px;
+    font-size: 15px;
+    text-align: left;
+    grid-column: 2 / 3;
+    padding-left : 10px;
+  }
+  .grid-item2 {
+    padding: 20px;
+    border-left: 1px solid #140101;
+    font-size: 15px;
+    text-align: left;
+    padding-left : 28px;
+  
+  }
+ 

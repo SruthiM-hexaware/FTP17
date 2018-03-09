@@ -1,0 +1,32 @@
+<div align = "center">
+  <h2 align = "center" >Login Screen</h2>
+  
+  <form (ngSubmit)="doLogin()" [formGroup]="loginForm" novalidate>
+
+    {{responseMessage}}
+  
+    <div class="form-content">
+      <label>Employee Id : </label>
+      <input type="text" placeholder="Enter Employee Id" formControlName="empId" value="{{ empId }}">
+      <span class="error" [hidden]="loginForm.controls.empId.valid || loginForm.controls.empId.pristine">
+        <p *ngIf="loginForm.controls.empId.errors?.required">
+          Employee Id Required
+        </p>
+        <p *ngIf="loginForm.controls.empId.errors?.minlength">
+            Employee Id must be 4 characters long
+          </p>
+        </span>
+    </div>
+
+    <div class="form-content">
+        <label>Password : </label>
+        <input type="text" placeholder="Enter Password" name="pass">
+      </div>
+  
+    <div class="container">
+    <button type="Submit">Login</button>
+    <button value="cancel"(click)= "docancel()" >cancel</button>
+    </div>
+  
+  </form>
+</div>

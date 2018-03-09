@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LeaveDetailsMapper.java</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='../../../../coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='../../../../logo.png'/>
+  <script type='text/javascript' src='../../../../coverage.js'></script>
+  <script type='text/javascript' src='../../../../prettify.js'></script>
+</head>
+<body onload='prettyPrint()'>
+  <table cellpadding='0' cellspacing='1'>
+    <caption>leavemanager\src\main\java\com\hexaware\ftp08\persistence\LeaveDetailsMapper.java</caption>
+    <tr>
+      <td class='line'>1</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>package com.hexaware.ftp08.persistence;</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td><pre class='imports prettyprint' onclick='showHideLines(this)'><div>import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.skife.jdbi.v2.tweak.ResultSetMapper;
+import org.skife.jdbi.v2.StatementContext;
+
+import com.hexaware.ftp08.model.LeaveDetails;
+import com.hexaware.ftp08.model.LeaveStatus;
+import com.hexaware.ftp08.model.LeaveType;</div><span>import ...</span></pre></td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>/**
+ * Mapper class to map from result set to leave details object.
+ */</div><span>/*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>15</td><td class='count'>6</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l15s0'>public class LeaveDetailsMapper implements ResultSetMapper&lt;LeaveDetails> {</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186, 187, 188, 189, 190, 194</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>    /**
+     * @param idx the index
+     * @param rs the resultset
+     * @param ctx the context
+     * @return the mapped employee object
+     * @throws SQLException in case there is an error in fetching data from the resultset
+     */</div><span>    /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>23</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  public final LeaveDetails map(final int idx, final ResultSet rs, final StatementContext ctx) throws SQLException {</pre></td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>25</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l25s0'>    String s = rs.getString("LEA_TYPE");</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x3, 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>26</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l26s0'>    LeaveType lt1 = LeaveType.valueOf(s);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x3, 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>28</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l28s0'>    String s2 = rs.getString("LEA_STATUS");</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x3, 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>29</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l29s0'>    LeaveStatus lt2 = LeaveStatus.valueOf(s2);</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x3, 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'></td><td>&nbsp;</td>
+      <td class='comment' onclick='showHideLines(this)'><div>        /**
+         * @return LeaveDetails
+         */</div><span>        /*...*/</span></td>
+    </tr>
+    <tr>
+      <td class='line'>33</td><td class='count'>8</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l33s0'>    return new LeaveDetails(rs.getInt("LEA_ID"), rs.getDate("LEA_START_DATE"), rs.getDate("LEA_END_DATE"),</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x6, 188x2</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>34</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l34s0'>                            rs.getInt("LEA_NO_OF_DAYS"), rs.getString("LEA_REASON"),</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x3, 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>35</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l35s0'>                            lt1, rs.getDate("LEA_APPLIED_ON"), rs.getString("LEA_MGR_COMMENTS"), lt2,</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x3, 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class='line'>36</td><td class='count'>4</td>
+      <td><pre class='prettyprint covered cp' onclick='showHide(this)' id='l36s0'>                            rs.getInt("EMP_ID"));</pre>
+        <ol style='display:none'>
+          <li>com.hexaware.ftp08.model.EmployeeTest#testApplyLeave: 186x3, 188</li>
+        </ol>
+      </td>
+    </tr>
+    <tr><td class='line'></td><td colspan='2'>&nbsp;</td></tr>
+    <tr>
+      <td class='line'>38</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>  }</pre></td>
+    </tr>
+    <tr>
+      <td class='line'>39</td><td>&nbsp;</td>
+      <td><pre class='prettyprint'>}</pre></td>
+    </tr>
+  </table>
+</body>
+</html>

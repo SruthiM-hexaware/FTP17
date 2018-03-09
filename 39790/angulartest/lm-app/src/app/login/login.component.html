@@ -1,0 +1,16 @@
+<h2 align="center" style="color:brown" text-indent="50px">
+  Employee Login!
+</h2>
+
+<form (ngSubmit)="show()" align="center">
+  User Name:
+  &nbsp;
+  <input type="text" [(ngModel)]="model.username" align="center" name="user" placeholder="Please enter Username"/>
+  <br><br>
+  Password:
+  &nbsp;&nbsp;
+  <input type="password" [(ngModel)]="model.password" align="center" name="pass" placeholder="Please enter Password"/>
+  <br/><br/>
+  <button>LOGIN</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+</form>

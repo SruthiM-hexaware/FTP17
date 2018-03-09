@@ -1,0 +1,35 @@
+#div{ 
+    width:300px;
+    height:400px; 
+    position:relative; 
+}
+#d1{
+    position: absolute;
+    left: 520px;
+    width:470px;
+    height:350px;
+    
+}
+
+#d2{
+    position: absolute;
+    left:20px;
+    width:470px;
+    height:350px;
+    
+}
+
+#d3{
+    position: absolute;
+    left:20px;
+    top:370px;
+    width:980px;
+    
+}
+
+#d4{
+    position: absolute;
+    left:20px;
+    top:610px;
+    width:980px;
+}

@@ -1,0 +1,22 @@
+
+<table border="3" style="width:100%;">
+    <tr>
+        <div class="grid-container">
+            <div class="grid-item1" >
+              <app-my-details></app-my-details>
+            </div>
+            <div class="grid-item2" *ngIf="value">
+              <app-my-manager></app-my-manager>
+            </div>
+            </div>
+        
+    </tr>
+    <tr> 
+      <td><app-leavehistory></app-leavehistory></td>
+    </tr>
+        <tr> 
+        <td><app-pending-leaves></app-pending-leaves></td>
+        </tr>
+</table>
+
+

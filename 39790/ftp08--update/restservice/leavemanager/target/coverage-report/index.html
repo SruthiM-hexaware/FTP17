@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Coverage Report</title>
+  <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+  <link rel='stylesheet' type='text/css' href='coverage.css'/>
+  <link rel='shortcut icon' type='image/png' href='logo.png'/>
+  <script type='text/javascript' src='coverage.js'></script>
+</head>
+<body>
+  <table id='packages'>
+    <caption>All Packages and Files<div style='font-size: smaller'>leavemanager\src\main\java</div></caption>
+    <tr>
+      <th style='cursor: col-resize' onclick='showHideAllFiles()'>Packages: 2</th>
+      <th onclick='location.reload()' style='cursor: n-resize' title='Click on the title for each metric to sort by size (total number of line segments, paths, or fields).'>Files: 7</th>
+      <th onclick='sortTables(1)' style='cursor: n-resize' title='Measures how much of the executable production code was exercised by tests.
+An executable line of code contains one or more executable segments.
+The percentages are calculated as 100*NE/NS, where NS is the number of segments and NE the number of executed segments.'>Line</th>
+      <th onclick='sortTables(2)' style='cursor: n-resize' title='Measures how many of the possible execution paths through method/constructor bodies were actually executed by tests.
+The percentages are calculated as 100*NPE/NP, where NP is the number of possible paths and NPE the number of fully executed paths.'>Path</th>
+      <th onclick='sortTables(3)' style='cursor: n-resize' title='Measures how many of the instance and static non-final fields were fully exercised by the test run.
+To be fully exercised, a field must have the last value assigned to it read by at least one test.
+The percentages are calculated as 100*NFE/NF, where NF is the number of non-final fields and NFE the number of fully exercised fields.'>Data</th>
+    </tr>
+    <tr>
+      <td class='package click' onclick='showHideFiles(this)'>com.hexaware.ftp08.model</td>
+      <td>
+        <table width='100%'>
+          <tr>
+            <td class='file class'><a target='_blank' href='com/hexaware/ftp08/model/Employee.html'>Employee.java</a>          </td>
+            <td style='background-color:#37c800' title='Line segments: 90/115'>78%</td>
+            <td style='background-color:#5ea100' title='Paths: 24/38'>63%</td>
+            <td style='background-color:#20df00' title='Fields: 7/8'>88%</td>
+          </tr>
+          <tr>
+            <td class='file class'><a target='_blank' href='com/hexaware/ftp08/model/LeaveDetails.html'>LeaveDetails.java</a>      </td>
+            <td style='background-color:#10ef00' title='Line segments: 88/94'>94%</td>
+            <td style='background-color:#0ff000' title='Paths: 31/33'>94%</td>
+            <td style='background-color:#00ff00' title='Fields: 10/10'>100%</td>
+          </tr>
+          <tr>
+            <td class='file enum'><a target='_blank' href='com/hexaware/ftp08/model/LeaveStatus.html'>LeaveStatus.java</a>       </td>
+            <td style='background-color:#00ff00' title='Line segments: 1/1'>100%</td>
+            <td style='background-color:#00ff00' title='Paths: 1/1'>100%</td>
+            <td class='nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file enum'><a target='_blank' href='com/hexaware/ftp08/model/LeaveType.html'>LeaveType.java</a>         </td>
+            <td style='background-color:#00ff00' title='Line segments: 1/1'>100%</td>
+            <td style='background-color:#00ff00' title='Paths: 1/1'>100%</td>
+            <td class='nocode'>N/A</td>
+          </tr>
+        </table>
+        <span>(4 source files)</span>
+  </td>
+      <td class='pt' style='background-color:#25da00' title='Line segments: 180/211'>85%</td>
+      <td class='pt' style='background-color:#38c700' title='Paths: 57/73'>78%</td>
+      <td class='pt' style='background-color:#0ef100' title='Fields: 17/18'>94%</td>
+    </tr>
+    <tr>
+      <td class='package click' onclick='showHideFiles(this)'>com.hexaware.ftp08.persistence</td>
+      <td>
+        <table width='100%'>
+          <tr>
+            <td class='file class'><a target='_blank' href='com/hexaware/ftp08/persistence/DbConnection.html'>DbConnection.java</a>      </td>
+            <td style='background-color:#4cb300' title='Line segments: 7/10'>70%</td>
+            <td style='background-color:#7f8000' title='Paths: 2/4'>50%</td>
+            <td class='nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file class'><a target='_blank' href='com/hexaware/ftp08/persistence/EmployeeMapper.html'>EmployeeMapper.java</a>    </td>
+            <td style='background-color:#00ff00' title='Line segments: 4/4'>100%</td>
+            <td style='background-color:#00ff00' title='Paths: 2/2'>100%</td>
+            <td class='nocode'>N/A</td>
+          </tr>
+          <tr>
+            <td class='file class'><a target='_blank' href='com/hexaware/ftp08/persistence/LeaveDetailsMapper.html'>LeaveDetailsMapper.java</a></td>
+            <td style='background-color:#00ff00' title='Line segments: 9/9'>100%</td>
+            <td style='background-color:#00ff00' title='Paths: 2/2'>100%</td>
+            <td class='nocode'>N/A</td>
+          </tr>
+        </table>
+        <span>(3 source files)</span>
+  </td>
+      <td class='pt' style='background-color:#21de00' title='Line segments: 20/23'>87%</td>
+      <td class='pt' style='background-color:#40bf00' title='Paths: 6/8'>75%</td>
+      <td class='nocode'>N/A</td>
+    </tr>
+    <tr class='total'>
+      <td>Total</td><td>&nbsp;</td>
+      <td class='pt' style='background-color:#25da00' title='Line segments: 200/234'>85%</td>
+      <td class='pt' style='background-color:#39c600' title='Paths: 63/81'>78%</td>
+      <td class='pt' style='background-color:#0ef100' title='Fields: 17/18'>94%</td>
+    </tr>
+  </table>
+  <p>
+    <a href='http://jmockit.org'><img src='logo.png'></a>
+    Generated on Fri Jan 12 18:14:01 IST 2018
+  </p>
+</body>
+</html>

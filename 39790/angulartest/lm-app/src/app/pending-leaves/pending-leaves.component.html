@@ -1,0 +1,56 @@
+
+<h1  align="center" >Pending Leaves of My Reporting Employees </h1>
+<table bgcolor="white" align="center" width ="auto"  class="table">
+
+    <tr  *ngFor="let emp of employ | async">
+        <p *ngIf="emp.managerId==mgid">
+            <th id="table1" colspan="2">Employee ID </th>
+            <td id="table1" colspan="2">{{emp.empId}}</td>
+            <th id="table1" colspan="2">Employee Name </th>
+            <td id="table1" colspan="2">{{emp.empName}}</td>
+
+            <th id="table1" >Leave Balance </th>
+            <td id="table1" colspan="2">{{emp.avlBal}}</td>
+            <tr id="table2">
+                <th>Leave ID</th>
+                <th>Number Of Days</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Leave Type</th>
+                <th>Leave Status</th>
+                <th>Leave Reason</th>
+                <th>Leave Applied</th>
+                <th>Leave Comments</th>
+                <th>Employee Id</th>
+            </tr>
+
+            <ng-container  *ngFor="let ld of pLeaves | async; let i = index">
+                <tr id="details" *ngIf="emp.empId == ld.empId" (click)="setClickedRow(ld,emp)" (click)="setRow(i)" [class.active]="i==selectedRow">
+                    <td>{{ld.leaveId}}</td>
+                    <td>{{ld.noOfDays}}</td>
+                    <td>{{ld.startDate}}</td>
+                    <td>{{ld.endDate}}</td>
+                    <td>{{ld.leaveType}}</td>
+                    <td>{{ld.leaveStatus}}</td>
+                    <td>{{ld.leaveReason}}</td>
+                    <td>{{ld.leaveApplied}}</td>
+                    <td>{{ld.leaveComments}}</td>
+                    <td>{{ld.empId}}</td>
+                </tr>
+            </ng-container>
+
+        </p>
+
+
+    </tr>
+
+</table>
+
+
+<div align="center" *ngIf="button==true">
+    <button button type="button" disabled>Approve/Deny</button>
+</div>
+
+<div align="center" *ngIf="button==false">
+    <button (click)="clickButton()" class="btn btn-success">Approve/Deny</button>
+</div>

@@ -1,0 +1,38 @@
+#table1 {
+    color: white;
+    width: auto;
+    height: auto;
+    padding: 0%;
+    font-family: Helvetica;
+    border-collapse: collapse;
+    background-color: #0F5C74;
+}
+#table2 {
+    background-color: #0F5C74;
+    padding: 0%;
+     color: white;
+    width: auto;    height: auto;
+    font-family: Helvetica;
+    border-collapse: collapse;
+
+}
+#details {
+    background-color:#afb8c6;
+    padding: 0%;
+    font-family: Helvetica;
+
+}
+
+
+.table tr.active td {
+    background-color:#123456 !important;
+    color: white;
+  }
+  h1 {
+	font-family: Helvetica;
+	font-size: 35px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 38.5px;
+}

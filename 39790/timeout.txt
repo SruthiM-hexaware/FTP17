@@ -1,0 +1,7 @@
+this.isValidFormSubmitted = true;
+    setTimeout(() => {
+      
+        this._route.navigate(['/dashboard'])
+      }
+      , 500);
+  }

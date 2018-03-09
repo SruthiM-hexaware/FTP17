@@ -1,0 +1,30 @@
+<h3 style="text-align:center;font-size:160%;">
+  My-Details
+</h3>
+
+<div class="mydetail-container">
+    <div class="grid1">
+      EmployeeID <br/> 
+      EmployeeNAme <br/>
+      Email Address<br/>
+      Mobile Number <br/>
+    </div>
+    <div class="grid2">
+       : {{(emp|async)?.empId}}<br/> 
+       : {{(emp|async)?.empName}}<br/>
+       : {{(emp|async)?.empEmail}}<br/>
+       : {{(emp|async)?.mobNo}}<br/>
+       
+          </div>
+      <div class="grid3"> 
+          date joined <br/> 
+          department <br/>
+
+    </div>
+      <div class="grid4">
+       
+          : {{(emp|async)?.dateOfJ}}<br/> 
+          : {{(emp|async)?.dept}}<br/>
+    </div>
+  </div>
+  <p style="text-align:center;"> Available leave balance  :{{(emp|async)?.avlBal}}</p>

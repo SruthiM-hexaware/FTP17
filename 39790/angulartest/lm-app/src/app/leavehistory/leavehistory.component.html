@@ -1,0 +1,37 @@
+<h1 align="center"><b>
+    My Leave Application Section
+  </b></h1>
+  <form align="center">
+  <table border="3" align="center">
+      <tr>
+        <th>Leave ID </th> 
+        <th>No Of Days</th>
+        <th>Start Date</th>
+        <th>End Date</th> 
+        <th>Leave Type</th>
+        <th>Leave Status</th> 
+        <th>Reason</th>
+        <th>Applied Date</th>
+        <th>Manager Comments</th>
+        <th>Emp Id</th> 
+      </tr>
+      
+      <tr *ngFor="let l of leaveDetails | async">
+      
+        <td>{{l.leaveId}} </td>
+        <td>{{l.noOfDays}}</td> 
+        <td>{{l.startDate}} </td> 
+        <td> {{l.endDate}} </td> 
+        <td>{{l.leaveType}} </td> 
+        <td>{{l.leaveStatus}}</td> 
+        <td>{{l.leaveReason}} </td> 
+        <td>{{l.leaveApplied}} </td> 
+        <td>{{l.leaveComments}}</td> 
+        <td>{{l.empId}} </td> 
+      </tr>
+    </table> 
+    <br><br>
+    <button color="white" padding="15px 32px" textalign="center" 
+            fontsize="16px" align="center" (click)="apply()">New Application</button>
+    </form>
+    

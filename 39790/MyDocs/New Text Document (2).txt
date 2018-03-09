@@ -1,0 +1,13 @@
+
+-- create a maven project for rest.
+
+
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-webapp -DarchetypeGroupId=org.glassfish.jersey.archetypes -DarchetypeVersion=2.25.1 
+
+-- execute java program
+mvn exec:java -Dexec.mainClass=com.hexaware.ftp17.util.CliMain
+
+-- javax.ws.rx.GET;
+javax.ws.rs.Path;
+javax.ws.rs.Produces;
+javax.ws.rs.PathParam;

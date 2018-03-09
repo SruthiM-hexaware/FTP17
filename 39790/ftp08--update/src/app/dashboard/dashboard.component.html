@@ -1,0 +1,23 @@
+<div id="div">    
+      <div id="d1" class="well well-lg">
+      <h1>MY DETAILS</h1>
+      <app-my-details></app-my-details>
+      </div>
+      <div id="d2" class="well well-lg">
+      <h1>MANAGER DETAILS</h1>
+      <div *ngIf="empId != 1000"><app-manager-details></app-manager-details></div>
+      <div *ngIf="empId == 1000"><h1>You dont have any Manager</h1></div>
+      </div>
+  
+    <div id="d3" class="well well-lg">
+      <h1>MYLEAVE APPLICATIONS</h1>
+      <app-myleave></app-myleave>
+    </div>
+
+    <div id="d4" class="well well-lg">
+      <h1>LIST PENDING</h1>
+      <app-listpending></app-listpending>
+    </div>
+     
+ 
+</div>

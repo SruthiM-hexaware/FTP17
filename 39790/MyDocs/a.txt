@@ -1,0 +1,46 @@
+@POST
++  @Path("{id}/applyforleave")
++  @Consumes(MediaType.APPLICATION_JSON)
++  @Produces(MediaType.APPLICATION_JSON)
++  public final String applyForLeave(@PathParam("id") final int id, final LeaveDetails leave) throws ParseException {
++    String msg = null;
++    System.out.println("apply for leave---->");
++    final Employee empl = Employee.listById(id);
++    if (empl == null) {
++      throw new NotFoundException("No such Employee ID: " + id);
++    } else {
++      msg = empl.applyForLeave(leave.getLeaveType(), leave.getNumberOfDays(), leave.getLeaveReason(),leave.getStartDate(), leave.getEndDate());
++    }
++    return msg;
++  }
++
++
++_____________________________________________________________________________________________________________________________________________
++
++$ 
+
+
+
+http://localhost:8080/ftp17/api/LeaveDetails/pendingLeave/3001
+
+curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"mgrID":"2000","leaveDays":"2","leavestat":"denied","levComments":"NA",}' "http://localhost:8080/ftptrainer/api/employees/2000/applyLeave"
++
++
++curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"noOfDays":"1","startDate":"2018-05-10","endDate":"2018-05-10","leaveReason":"sick","empId":"2000"}' "http://localhost:8080/RestDbPost/api/leave/2000/applyforleave"
+
+
+
++
++curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"leaveId":"2","leaveStatus":"APPROVED","leaveComments":"fine","empId":2000}' "http://localhost:8080/ftp17/api/LeaveDetails/approveorDeny"
+
+
+
+$ curl -vvv -H "Accept:application/json" -X POST -H "Content-Type:application/json" -d '{"levId":"2","leaveStartDate":"2018-01-01","leaveEndDate":"2018-01-02","leaveType":"EL","leaveReason":"sick","leaveAppliedOn":"2018-01-01"}' "http://localhost:8080/ftptrainer/api/employees/2000/applyLeave"
+
+
+pps/ftp17.warr /D/FTP/apache-tomcat-8.5.16-windows-x64/apache-tomcat-8.5.16/webap
+
+
+
+
+cp ftp17.war C:\apache-tomcat-8.5.16-windows-x64\apache-tomcat-8.5.16\webapps/ftp17.war

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+My First Application!
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <p>
+      Name is:{{name}}
+  </p>
+  <ion-item>
+    <ion-input class="item" type="text" [(ngModel)]="sname" placeholder="Firstname" ></ion-input>
+    <ion-input class="item" type="text" [(ngModel)]="lname"></ion-input>
+  </ion-item><br/><br/><br/>
+  <ion-item>
+      <ion-input class="item" type="text" [(ngModel)]="lname"></ion-input>
+    </ion-item><br/><br/>
+
+  <button (click)="show()" ion-button round color="secondary" >show</button><br/><br/><br/><br/>
+result is :{{res}}
+</ion-content>

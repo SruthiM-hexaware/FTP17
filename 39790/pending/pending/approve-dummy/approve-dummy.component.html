@@ -1,0 +1,109 @@
+<p>
+  approve-dummy works!
+</p>
+
+<body>
+    <h1 style= "color:rgb(12, 170, 233);text-align:center;"><b>Approve Deny</b> </h1>
+<div style="text-align:center">
+        <form #userForm="ngForm" (ngSubmit)="approveDeny(userForm)">
+       
+            <div class="form-group">
+                
+             <label for= "employeeID"><b><font size="4">Employee ID :</font></b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             {{ (empData | async)?.empId}}<br/>
+           
+
+         </div>
+         <div class="form-group">
+            
+         <label for= "employName"><b><font size="4">Employee Name :</font></b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+         {{ (empData | async)?.empName}}<br/>
+       
+
+        </div>
+        <div class="form-group">
+            
+         <label for= "avlBal"><b><font size="4">Employee Leave Balance :</font></b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+         {{ (empData | async)?.avlBal}}<br/>
+       
+
+        </div>
+        
+        <div>
+            Leave ID : 
+            {{leav.leaveId}}
+        </div> <br/> 
+        <div> 
+            Start Date : 
+            {{leav.startDate}}
+        </div> <br/> 
+        <div> 
+            End Date : 
+            {{leav.endDate}}
+        </div> <br/> 
+        <div>
+            No Of Days 
+            {{leav.noOfDays}}
+        </div>
+        <div> 
+            Leave Reason 
+            {{leav.leaveReason}}
+        </div>
+        <div> 
+            Leave Type :
+            {{leav.leaveType}}
+        </div>
+        <div class= "form-group">
+                <label for= "leaveComments"><b><font size="4">Leave Comments :</font></b> </label>
+                <input type = "text" class= "form-control"
+                id = "leaveComments" required="required"
+                [(ngModel)]= "leav.leaveComments" name="leaveComments" #leaveComments="ngModel" >
+              
+            </div>
+            <button class=button>Approve</button> 
+            <button class="button" (click)="reject()">Reject</button>  
+        <!-- <div class="form-group">
+               
+            <label for= "leaveStartDate"><b><font size="4">Start Date :</font></b></label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="Date" required="required" [(ngModel)]="model.leaveStartDate" name="leaveStartDate" #leaveStartDate="ngModel"  >  
+         
+        </div>
+        <div class= "form-group">
+                <label for= "leaveEndDate"><b><font size="4">End Date :</font>&nbsp;</b> </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type = "Date" class= "form-control"
+                id = "leaveEndDate" required="required"
+                [(ngModel)]= "model.leaveEndDate" name="leaveEndDate" #leaveEndDate="ngModel" (change)="calculateDays()">
+              
+            </div>
+            <div class="form-group">
+                    <label for="leaveType"><b><font size="4">Leave Type :</font></b></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <select [(ngModel)]="model.leaveType" name="leaveType" required="required" #leaveType="ngModel">
+                        <option value="EL">EL</option>
+                    </select>
+            </div>
+            <div class= "form-group">
+                    <label for= "leaveDays"><b><font size="4">Number of Days :</font></b> </label>
+                    <input type = "number" class= "form-control"
+                    id = "leaveDays" required="required"
+                    [(ngModel)]= "model.leaveDays" name="leaveDays" #leaveDays="ngModel" >
+                  
+                </div>
+            <div class= "form-group">
+                    <label for= "leaveReason"><b><font size="4">Leave Reason :</font> </b></label>&nbsp;&nbsp;&nbsp;
+                    <input type = "string" class= "form-control" size="30"
+                    id = "leaveReason" required="required"
+                    [(ngModel)]= "model.leaveReason" name="leaveReason" #leaveReason="ngModel">
+                   
+                </div>
+              
+            
+                <button class=button>Approve</button> 
+                <button class="button" (click)="reject()">Reject</button>  -->
+             
+        </form>
+    </div>
+    
+</body>

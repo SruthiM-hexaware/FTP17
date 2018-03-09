@@ -1,0 +1,60 @@
+<p>
+  apply-leaves works!
+</p>
+
+<table border="5" >
+  
+  <tr *ngFor="let emp of empl | async"> 
+      <!-- <p *ngIf="emp.managerId!=0" >  -->
+          <p *ngIf="emp.managerId==mgid">
+    <th>Employ ID </th> 
+      <td>{{emp.empId}}</td>
+      <th>Employ Name </th> 
+      <td>{{emp.empName}}</td>
+     
+      <th>Leave Balance </th> 
+      <td>{{emp.avlBal}}</td> 
+      <tr>
+          <td >Leave ID</td>
+          <td>Number Of Days</td>
+          <td>Start Date</td>
+          <td>End Date</td>
+          <td>Leave Type</td>
+          <td>Leave Status</td>
+          <td>Leave Reason</td>
+          <td>Leave Applied</td>
+          <td>Leave Comments</td>
+          <td>Employee Id</td>
+        </tr>
+  
+        <tr *ngFor="let ld of pLeaves | async; let i = index"  (click)="setClickedRowDup(ld,emp)"> 
+            <p *ngIf="emp.empId==ld.empId">
+            <td >{{ld.leaveId}}</td>
+            <td>{{ld.noOfDays}}</td>
+            <td>{{ld.startDate}}</td>
+            <td>{{ld.endDate}}</td>
+            <td>{{ld.leaveType}}</td>
+            <td>{{ld.leaveStatus}}</td>
+            <td>{{ld.leaveReason}}</td>
+            <td>{{ld.leaveApplied}}</td>
+            <td>{{ld.leaveComments}}</td>
+            <td>{{ld.empId}}</td>
+            </p>
+          </tr>
+      
+      </p>
+
+     
+  </tr>
+ 
+</table> 
+
+
+<div *ngIf="button==true">
+    <button button type="button" disabled>Approve/Deny</button>
+</div>   
+
+<div *ngIf="button==false"  >
+     <!-- <strong >{{selectedRow}}</strong>   -->
+     <button (click)="clickButton()" class="btn btn-success" >Approve/Deny</button>
+</div>

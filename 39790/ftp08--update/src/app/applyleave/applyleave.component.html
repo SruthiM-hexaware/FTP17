@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<table>
+	<tr>
+    	<td>StartDate</td>
+        <td>:</td>
+        <td><input type="date" placeholder="startdate" [(ngModel)]='leavedetails.leaStartDate'></td>
+    </tr>
+    <tr></tr>
+    <tr>
+    	<td>EndDate</td>
+        <td>:</td>
+        <td><input type="date" placeholder="endtdate" [(ngModel)]="leavedetails.leaEndDate"></td>
+    </tr>
+    <tr></tr>
+    <tr>
+    	<td>Number of Days</td>
+        <td>:</td>
+        <td><input type="number" min=0 placeholder="nn" [(ngModel)]="leavedetails.leaNoOfDays"></td>
+    </tr>
+    <tr></tr>
+    <tr>
+    	<td>Leave Type</td>
+        <td>:</td>
+        <td>
+        	<select>
+        		<option>EL</option>	
+            </select>
+        </td>
+    </tr>
+    <tr></tr>
+    <tr>
+    	<td>Leave Reason</td>
+        <td>:</td>
+        <td><textarea rows="8" column="200" [(ngModel)]="leavedetails.leaReason"></textarea></td>
+    </tr>
+    <tr></tr>
+ </table>
+  <br><br>
+  <!--<input type="button" value="Apply" (click)="doApplyLeave()">-->
+  <input type="button" value="Apply" (click)='doApply(leavedetails.emplId)'>
+  <input type="button" value="cancel" (click)="doCancel()">
+  
+
+<div>{{message}}</div>
+
+</body>
+</html>
